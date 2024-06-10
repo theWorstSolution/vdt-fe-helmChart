@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.prefix }}-config
+data:
+  PORT: '{{ .Values.configMap.PORT }}'
+  REACT_APP_API_HOST: '{{ .Values.configMap.REACT_APP_API_HOST }}'
+  # Add more key-value pairs for your application settings
