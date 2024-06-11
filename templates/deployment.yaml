@@ -23,8 +23,3 @@ spec:
             configMapKeyRef:
               name: {{ .Values.prefix }}-config
               key: PORT
-        - name: REACT_APP_API_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: {{ .Values.prefix }}-config
-              key: REACT_APP_API_HOST
