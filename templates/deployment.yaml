@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.prefix }}-deployment
+  labels:
+    app: {{ .Values.prefix }}
 spec:
   replicas: {{ .Values.replicas }}
   selector:
@@ -17,9 +19,3 @@ spec:
         image: '{{ .Values.image.name }}:{{ .Values.appVersion }}'
         ports:
         - containerPort: {{ .Values.configMap.PORT }}
-        env:
-        - name: PORT
-          valueFrom:
-            configMapKeyRef:
-              name: {{ .Values.prefix }}-config
-              key: PORT
