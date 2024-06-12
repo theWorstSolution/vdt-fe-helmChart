@@ -9,6 +9,6 @@ spec:
   - name: port
     nodePort: 30001
     protocol: TCP
-    port: {{ .Values.configMap.PORT }}  # External port for accessing your application
-    targetPort: {{ .Values.configMap.PORT }}  # Port exposed by your Node.js container 
+    port: {{ .Values.configMap.HAPROXY_PORT }}  # External port for accessing your application
+    targetPort: {{ .Values.configMap.HAPROXY_PORT }}  # Port exposed by your Node.js container 
   type: {{ .Values.service.type }}

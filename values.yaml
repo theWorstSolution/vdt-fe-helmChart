@@ -8,3 +8,4 @@ service:
   type: NodePort  # Adjust service type (e.g. NodePort) if needed
 configMap:
   PORT: 3000  # backend listening port
+  HAPROXY_PORT: 443

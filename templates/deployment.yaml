@@ -23,7 +23,7 @@ spec:
       - name: haproxy
         image: haproxy:latest
         ports:
-        - containerPort: 443
+        - containerPort: {{.Values.configMap.HAPROXY_PORT}}
         volumeMounts:
         - name: haproxy-config-volume
           mountPath: /usr/local/etc/haproxy/haproxy.cfg
