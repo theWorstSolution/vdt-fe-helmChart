@@ -15,7 +15,14 @@ spec:
         app: {{ .Values.prefix }}
     spec:
       containers:
-      - name: {{ .Values.prefix }}
-        image: '{{ .Values.image.name }}:{{ .Values.appVersion }}'
-        ports:
-        - containerPort: {{ .Values.configMap.PORT }}
+        - name: {{ .Values.prefix }}
+          image: '{{ .Values.image.name }}:{{ .Values.appVersion }}'
+          volumeMounts:
+            - name: varlog
+              mountPath: /var/log
+          ports:
+            - containerPort: {{ .Values.configMap.PORT }}
+      volumes:
+        - name: varlog
+          hostPath:
+            path: /var/log
