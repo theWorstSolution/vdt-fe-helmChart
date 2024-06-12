@@ -19,3 +19,14 @@ spec:
         image: '{{ .Values.image.name }}:{{ .Values.appVersion }}'
         ports:
         - containerPort: {{ .Values.configMap.PORT }}
+
+      - name: haproxy
+        image: haproxy:latest
+        ports:
+        - containerPort: 443
+        volumeMounts:
+        - name: haproxy-config-volume
+          mountPath: /usr/local/etc/haproxy/haproxy.cfg
+          subPath: haproxy.cfg
+        - name: haproxy-cert-volume
+          mountPath: /usr/local/etc/haproxy/certs

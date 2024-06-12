@@ -7,4 +7,4 @@ image:
 service:
   type: NodePort  # Adjust service type (e.g. NodePort) if needed
 configMap:
-  PORT: 80  # Listening port
+  PORT: 3000  # backend listening port
