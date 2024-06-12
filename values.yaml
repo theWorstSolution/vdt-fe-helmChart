@@ -1,5 +1,5 @@
 # Define default values for customization
-appVersion: 0.1.4
+appVersion: 0.1.5
 replicas: 1
 prefix: react-frontend
 image:
