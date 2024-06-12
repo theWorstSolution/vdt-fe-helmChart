@@ -30,3 +30,12 @@ spec:
           subPath: haproxy.cfg
         - name: haproxy-cert-volume
           mountPath: /usr/local/etc/haproxy/certs
+
+      volumes:
+        - name: haproxy-config-volume
+          configMap:
+            name: haproxy-config
+
+        - name: haproxy-cert-volume
+          secret:
+            secretName: haproxy-cert
