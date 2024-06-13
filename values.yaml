@@ -1,6 +1,6 @@
 # Define default values for customization
 appVersion: 0.2.2
-replicas: 1
+replicas: 2
 prefix: react-frontend
 image:
   name: agrainofsand/react-frontend
